@@ -1,0 +1,2 @@
+instancia,n,peso_mst,t_mst_ms,mem_mst_kb,t_matching_ms,mem_matching_kb,custo_twice,t_twice_ms,mem_twice_kb,custo_christofides,t_christofides_ms,mem_christofides_kb,otimo,gap_twice_pct,gap_christofides_pct
+berlin52,52,6078,0.4561,5.22,58.9056,117.33,10402,0.6453,12.94,8046,40.8409,96.76,7542,37.921,6.6826
