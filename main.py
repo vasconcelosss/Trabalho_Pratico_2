@@ -1,14 +1,3 @@
-"""
-Script principal do TP2 — Caixeiro Viajante (TSP).
-
-Lê instâncias da TSPLIB, executa Twice-around-the-tree e Christofides,
-e exibe as métricas de tempo, memória e qualidade das rotas.
-
-Uso:
-    python main.py                    → usa instância embutida de teste
-    python main.py data/ulysses16.tsp → usa uma instância da TSPLIB
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
@@ -38,16 +27,16 @@ OTIMOS_CONHECIDOS = {
 def instancia_de_teste_embutida():
     """
     Instância pequena criada manualmente para demonstração rápida.
-    5 vértices formando um pentagono regular aproximado.
+    5 vértices formando um pentágono regular aproximado.
     """
     import math
     n = 5
-    # Vértices em um pentágono regular de raio 10
     coords = {}
     for i in range(n):
         angulo = 2 * math.pi * i / n
         coords[i] = (10 * math.cos(angulo), 10 * math.sin(angulo))
-    return "teste_pentagono", n, coords
+    # Retorna no mesmo formato de ler_instancia_tsplib: (nome, n, coords, None)
+    return "teste_pentagono", n, coords, None
 
 
 def main():
@@ -55,15 +44,24 @@ def main():
     if len(sys.argv) >= 2:
         caminho = sys.argv[1]
         print(f"Lendo instância: {caminho}")
-        nome, n, coords = ler_instancia_tsplib(caminho)
+        nome, n, coords, dist_predef = ler_instancia_tsplib(caminho)
     else:
         print("Nenhuma instância fornecida. Usando instância de teste embutida.")
-        nome, n, coords = instancia_de_teste_embutida()
+        nome, n, coords, dist_predef = instancia_de_teste_embutida()
 
     print(f"Instância: {nome} | Vértices: {n}")
 
-    # Monta a matriz de distâncias
-    distancias = calcular_matriz_distancias(coords, n)
+    # Monta a matriz de distâncias:
+    # - se o arquivo já fornece os pesos explicitamente, usa diretamente
+    # - se são coordenadas EUC_2D, calcula a partir das coordenadas
+    if dist_predef is not None:
+        distancias = dist_predef
+        print("Formato: EXPLICIT (matriz de pesos pré-definida)")
+    elif coords:
+        distancias = calcular_matriz_distancias(coords, n)
+        print("Formato: EUC_2D (distância euclidiana calculada)")
+    else:
+        raise ValueError(f"Não foi possível obter a matriz de distâncias de '{nome}'.")
 
     # Busca solução ótima (se disponível)
     custo_otimo = OTIMOS_CONHECIDOS.get(nome.lower(), None)
