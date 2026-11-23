@@ -48,8 +48,14 @@ def rodar_e_salvar(lista_arquivos_tsp, arquivo_saida="results/resultados.csv"):
 
         for caminho in lista_arquivos_tsp:
             try:
-                nome, n, coords = ler_instancia_tsplib(caminho)
-                distancias = calcular_matriz_distancias(coords, n)
+                nome, n, coords, dist_predef = ler_instancia_tsplib(caminho)
+                if dist_predef is not None:
+                    distancias = dist_predef
+                elif coords:
+                    distancias = calcular_matriz_distancias(coords, n)
+                else:
+                    print(f"  IGNORADO (formato não suportado): {caminho}")
+                    continue
                 custo_otimo = OTIMOS_CONHECIDOS.get(nome.lower(), None)
 
                 res = rodar_profiling(distancias, n, nome)
