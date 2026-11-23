@@ -1,26 +1,3 @@
-"""
-Algoritmo Twice-around-the-tree para o TSP.
-
-A ideia do algoritmo vem diretamente da teoria de grafos eulerianos.
-A MST tem peso ≤ custo da solução ótima do TSP, pois se removermos qualquer
-aresta do tour ótimo (que é um ciclo hamiltoniano) obtemos uma árvore geradora.
-
-Passos do algoritmo:
-  1. Calcular a MST (Prim).
-  2. Duplicar as arestas da MST → grafo euleriano (todo vértice tem grau par).
-  3. Encontrar um circuito euleriano nesse grafo (visita cada aresta uma vez).
-  4. Percorrer o circuito e pular vértices já visitados (shortcut).
-  5. O resultado é uma rota hamiltoniana (ciclo TSP).
-
-Garantia de aproximação:
-  custo(rota) ≤ custo(circuito euleriano) = 2 * peso(MST) ≤ 2 * OPT
-
-A desigualdade triangular garante que o shortcut não piora o custo.
-Por isso, o algoritmo é uma 2-aproximação para o TSP métrico.
-
-Referência: Kleinberg & Tardos, "Algorithm Design", Seção 11.3.
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
