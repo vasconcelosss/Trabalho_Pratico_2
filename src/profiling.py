@@ -1,18 +1,3 @@
-"""
-Medição de tempo e memória das subrotinas do TP2.
-
-Usamos ferramentas simples disponíveis na biblioteca padrão do Python:
-  - time.perf_counter(): cronômetro de alta resolução (melhor que time.time())
-  - tracemalloc: rastreia alocações de memória pelo interpretador Python
-
-Limitações importantes do tracemalloc:
-  - Ele rastreia apenas alocações feitas PELO Python. Código em C (como parte
-    do NetworkX ou NumPy) pode alocar memória diretamente sem o Python saber.
-  - Por isso, a memória do emparelhamento (NetworkX) pode aparecer subavaliada.
-  - Para uma medição mais precisa, seria necessário o módulo 'memory_profiler'
-    ou ferramentas de nível de sistema operacional (como /proc/self/status no Linux).
-"""
-
 import time
 import tracemalloc
 import sys
