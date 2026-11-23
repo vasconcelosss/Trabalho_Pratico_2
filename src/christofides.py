@@ -1,32 +1,3 @@
-"""
-Algoritmo de Christofides para o TSP (aproximação de fator 3/2).
-
-O algoritmo foi proposto por Christofides em 1976 e é uma das heurísticas
-mais conhecidas para o TSP métrico. A garantia de 3/2 é teórica: na prática
-o resultado costuma ser bem melhor.
-
-Passos do algoritmo:
-  1. Calcular a MST T do grafo completo.
-  2. Identificar os vértices de grau ímpar em T.
-  3. Encontrar o emparelhamento perfeito de peso mínimo M entre esses vértices.
-  4. Combinar T e M → multigrafo H (onde todo vértice tem grau par).
-  5. Encontrar um circuito euleriano em H.
-  6. Converter o circuito euleriano em rota hamiltoniana (shortcut).
-  7. Calcular o custo.
-
-Por que a garantia é 3/2?
-  - peso(MST) ≤ OPT  (a MST nunca é pior do que o tour ótimo sem uma aresta)
-  - peso(matching) ≤ OPT/2  (porque o tour ótimo nos vértices de grau ímpar,
-    que é um ciclo hamiltoniano sobre eles, pode ser dividido em dois emparelhamentos
-    perfeitos; o de menor peso vale no máximo metade do tour ótimo sobre esses vértices)
-  - custo(Christofides) ≤ peso(MST) + peso(matching) ≤ OPT + OPT/2 = 3/2 * OPT
-
-Nota: a garantia de 3/2 exige que o problema satisfaça a desigualdade triangular,
-o que é o caso para distâncias euclidianas (EUC_2D da TSPLIB).
-
-Referência: Kleinberg & Tardos, "Algorithm Design", Seção 11.3.
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
