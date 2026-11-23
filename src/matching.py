@@ -1,33 +1,3 @@
-"""
-Emparelhamento perfeito de peso mínimo (Minimum Weight Perfect Matching).
-
-Essa subrotina é usada no algoritmo de Christofides:
-  - Identifica os vértices de grau ímpar na MST
-  - Encontra o emparelhamento perfeito de peso mínimo entre eles
-
-O que é emparelhamento perfeito?
-  Um emparelhamento M em um grafo G = (V, E) é um conjunto de arestas sem
-  vértices em comum. Um emparelhamento é "perfeito" quando todos os vértices
-  do grafo aparecem em exatamente uma aresta de M.
-
-Por que peso mínimo?
-  Queremos minimizar a soma dos pesos das arestas do emparelhamento, pois
-  isso minimiza o custo adicionado ao grafo no algoritmo de Christofides.
-  Uma solução gulosa (vizinho mais próximo) NÃO garante o ótimo global.
-
-Por que NetworkX?
-  O emparelhamento perfeito de peso mínimo é um problema clássico resolvido
-  pelo algoritmo de Blossom (Edmonds, 1965), que tem complexidade O(n³).
-  A implementação do Blossom é complexa demais para ser feita do zero neste TP.
-  O enunciado permite o uso de bibliotecas de grafos para suporte, exigindo
-  apenas que a subrotina seja medida separadamente (profiling).
-
-Referências:
-  - Cormen et al., "Algoritmos: Teoria e Prática", Cap. 26 (Matching)
-  - Goodrich & Tamassia, "Algorithm Design and Applications", Cap. 13
-  - Edmonds, J. (1965). "Paths, trees, and flowers." Canadian Journal of Mathematics.
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
