@@ -3,7 +3,7 @@ import os
 import math
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from heuristics import cold_start, nearest_neighbor, convex_hull_insertion, fecho_convexo
+from heuristics import cold_start, nearest_neighbor, convex_hull_insertion, findConvexHull_indices as fecho_convexo
 from utils import calcular_custo_rota
 
 
