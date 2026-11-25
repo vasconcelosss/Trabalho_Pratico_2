@@ -1,0 +1,35 @@
+cProfile do Christofides em st70 (n=70), 20 execuções
+
+         3638921 function calls (3638341 primitive calls) in 1.187 seconds
+
+   Ordered by: cumulative time
+   List reduced from 84 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       20    0.002    0.000    1.187    0.059 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/src/christofides.py:51(christofides)
+       20    0.004    0.000    1.174    0.059 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/src/matching.py:14(emparelhamento_perfeito_minimo)
+       20    0.000    0.000    1.150    0.058 <class 'networkx.utils.decorators.argmap'> compilation 10:1(argmap_max_weight_matching_5)
+       40    0.000    0.000    1.150    0.029 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/utils/backends.py:541(_call_if_no_backends_installed)
+       20    0.280    0.014    1.150    0.057 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/algorithms/matching.py:318(max_weight_matching)
+   444200    0.270    0.000    0.687    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/algorithms/matching.py:508(slack)
+   444200    0.107    0.000    0.316    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/graph.py:508(__getitem__)
+   444200    0.173    0.000    0.209    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/coreviews.py:81(__getitem__)
+  1154600    0.145    0.000    0.145    0.000 {method 'get' of 'dict' objects}
+      280    0.021    0.000    0.057    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/algorithms/matching.py:575(addBlossom)
+       20    0.029    0.001    0.047    0.002 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/algorithms/matching.py:884(verifyOptimum)
+   444200    0.045    0.000    0.045    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/coreviews.py:53(__getitem__)
+   444220    0.036    0.000    0.036    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/coreviews.py:44(__init__)
+    11220    0.012    0.000    0.019    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/graph.py:916(add_edge)
+7200/6660    0.008    0.000    0.012    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/algorithms/matching.py:513(assignLabel)
+    22480    0.008    0.000    0.010    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/reportviews.py:1044(__iter__)
+    72960    0.008    0.000    0.008    0.000 {method 'append' of 'list' objects}
+       20    0.006    0.000    0.006    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/src/mst.py:18(prim)
+     7540    0.003    0.000    0.004    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/graph.py:1343(neighbors)
+    11240    0.002    0.000    0.004    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/utils/misc.py:658(_clear_cache)
+       20    0.002    0.000    0.003    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/src/christofides.py:11(_circuito_euleriano)
+    23000    0.003    0.000    0.003    0.000 {method 'reverse' of 'list' objects}
+     2560    0.001    0.000    0.002    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/algorithms/matching.py:415(leaves)
+    22440    0.002    0.000    0.002    0.000 /home/izzy/Algoritmos2/tp2/Trabalho_Pratico_2/venv/lib/python3.14/site-packages/networkx/classes/reportviews.py:975(<lambda>)
+    13100    0.002    0.000    0.002    0.000 {method 'pop' of 'list' objects}
+
+

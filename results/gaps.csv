@@ -1,0 +1,15 @@
+instancia,n,faixa,otimo_bnb,otimo_tabela,otimo_usado,fonte_otimo,conferencia,custo_twice,custo_christofides,custo_nn,custo_hull,gap_twice_pct,gap_christofides_pct,gap_nn_pct,gap_hull_pct,triangulo_ok,viola_garantia,alerta
+burma14,14,principal,3323.0,3323,3323.0,bnb,OK,4003,3546,4048,3323,20.4634,6.7108,21.8176,0.0,True,False,NA
+ulysses16,16,principal,6859.0,6859,6859.0,bnb,OK,7788,7030,9988,6972,13.5442,2.4931,45.6189,1.6475,True,False,NA
+gr17,17,principal,2085.0,2085,2085.0,bnb,OK,2352,2190,2187,NA,12.8058,5.036,4.8921,NA,False,NA,NA
+gr21,21,principal,2707.0,2707,2707.0,bnb,OK,3738,2782,3333,NA,38.0864,2.7706,23.1252,NA,False,NA,NA
+ulysses22,22,principal,7013.0,7013,7013.0,bnb,OK,8308,7351,10586,7043,18.4657,4.8196,50.9482,0.4278,True,False,NA
+gr24,24,principal,1272.0,1272,1272.0,bnb,OK,1641,1400,1553,NA,29.0094,10.0629,22.0912,NA,False,NA,NA
+fri26,26,principal,937.0,937,937.0,bnb,OK,1136,976,1112,NA,21.238,4.1622,18.6766,NA,False,NA,NA
+bayg29,29,principal,1610.0,1610,1610.0,bnb,OK,2193,1796,2005,1650,36.2112,11.5528,24.5342,2.4845,True,False,NA
+bays29,29,principal,2020.0,2020,2020.0,bnb,OK,2677,2283,2258,2063,32.5248,13.0198,11.7822,2.1287,False,NA,NA
+berlin52_k32,32,principal,6220.0,NA,6220.0,bnb,SEM_TABELA,7565,6863,6820,6232,21.6238,10.3376,9.6463,0.1929,False,NA,NA
+berlin52_k38,38,principal,6585.0,NA,6585.0,bnb,SEM_TABELA,8523,7290,6919,7196,29.4305,10.7062,5.0721,9.2787,False,NA,NA
+att48,48,limite,10628.0,10628,10628.0,bnb,OK,13926,11554,12861,10863,31.0312,8.7128,21.0105,2.2111,True,False,NA
+berlin52,52,limite,7542.0,7542,7542.0,bnb,OK,10402,8046,8980,8105,37.921,6.6826,19.0666,7.4649,False,NA,NA
+st70,70,limite,NA,675,675.0,tabela,TIMEOUT_BNB,874,739,830,701,29.4815,9.4815,22.963,3.8519,False,NA,NA

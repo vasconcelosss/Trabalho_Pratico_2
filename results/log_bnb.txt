@@ -1,0 +1,89 @@
+
+=== Executando B&B + Warm-Starts: burma14 (n=14) ===
+  cold_start        | OK      | exp=436      | pod=1342     | t_bnb=13.0655 ms
+  nearest_neighbor  | OK      | exp=436      | pod=1342     | t_bnb=6.4629 ms
+  convex_hull       | OK      | exp=0        | pod=1        | t_bnb=1.8881 ms
+  twice_around      | OK      | exp=436      | pod=1342     | t_bnb=7.0917 ms
+  christofides      | OK      | exp=138      | pod=571      | t_bnb=3.5041 ms
+
+=== Executando B&B + Warm-Starts: ulysses16 (n=16) ===
+  cold_start        | OK      | exp=14       | pod=104      | t_bnb=3.4285 ms
+  nearest_neighbor  | OK      | exp=14       | pod=104      | t_bnb=2.5852 ms
+  convex_hull       | OK      | exp=14       | pod=104      | t_bnb=3.2025 ms
+  twice_around      | OK      | exp=14       | pod=104      | t_bnb=2.8116 ms
+  christofides      | OK      | exp=14       | pod=104      | t_bnb=2.4383 ms
+
+=== Executando B&B + Warm-Starts: gr17 (n=17) ===
+  cold_start        | OK      | exp=130      | pod=644      | t_bnb=5.4979 ms
+  nearest_neighbor  | OK      | exp=131      | pod=651      | t_bnb=5.1396 ms
+  twice_around      | OK      | exp=130      | pod=644      | t_bnb=5.8856 ms
+  christofides      | OK      | exp=130      | pod=644      | t_bnb=5.2908 ms
+
+=== Executando B&B + Warm-Starts: gr21 (n=21) ===
+  cold_start        | OK      | exp=1608     | pod=11491    | t_bnb=28.2874 ms
+  nearest_neighbor  | OK      | exp=1608     | pod=11491    | t_bnb=26.1552 ms
+  twice_around      | OK      | exp=1608     | pod=11491    | t_bnb=26.7373 ms
+  christofides      | OK      | exp=219      | pod=2064     | t_bnb=6.1409 ms
+
+=== Executando B&B + Warm-Starts: ulysses22 (n=22) ===
+  cold_start        | OK      | exp=20       | pod=209      | t_bnb=5.8896 ms
+  nearest_neighbor  | OK      | exp=20       | pod=209      | t_bnb=5.898 ms
+  convex_hull       | OK      | exp=20       | pod=209      | t_bnb=6.7289 ms
+  twice_around      | OK      | exp=20       | pod=209      | t_bnb=8.1927 ms
+  christofides      | OK      | exp=20       | pod=209      | t_bnb=6.4827 ms
+
+=== Executando B&B + Warm-Starts: gr24 (n=24) ===
+  cold_start        | OK      | exp=634636   | pod=4403661  | t_bnb=21120.1905 ms
+  nearest_neighbor  | OK      | exp=634557   | pod=4403503  | t_bnb=21945.337 ms
+  twice_around      | OK      | exp=634636   | pod=4403661  | t_bnb=23374.3648 ms
+  christofides      | OK      | exp=218010   | pod=1642505  | t_bnb=9205.9393 ms
+
+=== Executando B&B + Warm-Starts: fri26 (n=26) ===
+  cold_start        | OK      | exp=27       | pod=365      | t_bnb=11.0029 ms
+  nearest_neighbor  | OK      | exp=27       | pod=365      | t_bnb=10.3037 ms
+  twice_around      | OK      | exp=27       | pod=365      | t_bnb=10.6198 ms
+  christofides      | OK      | exp=27       | pod=365      | t_bnb=10.6213 ms
+
+=== Executando B&B + Warm-Starts: bayg29 (n=29) ===
+  cold_start        | OK      | exp=161723   | pod=1747008  | t_bnb=12937.8432 ms
+  nearest_neighbor  | OK      | exp=161723   | pod=1747008  | t_bnb=12227.9879 ms
+  convex_hull       | OK      | exp=1293     | pod=19198    | t_bnb=162.1478 ms
+  twice_around      | OK      | exp=161723   | pod=1747008  | t_bnb=12525.2129 ms
+  christofides      | OK      | exp=157513   | pod=1719772  | t_bnb=12209.1686 ms
+
+=== Executando B&B + Warm-Starts: bays29 (n=29) ===
+  cold_start        | OK      | exp=183573   | pod=1944644  | t_bnb=12695.7212 ms
+  nearest_neighbor  | OK      | exp=129664   | pod=1322496  | t_bnb=8422.144 ms
+  convex_hull       | OK      | exp=1251     | pod=18369    | t_bnb=160.9324 ms
+  twice_around      | OK      | exp=183573   | pod=1944644  | t_bnb=12563.7688 ms
+  christofides      | OK      | exp=182511   | pod=1938044  | t_bnb=12501.2513 ms
+
+=== Executando B&B + Warm-Starts: berlin52_k32 (n=32) ===
+  cold_start        | OK      | exp=30       | pod=465      | t_bnb=17.1117 ms
+  nearest_neighbor  | OK      | exp=30       | pod=465      | t_bnb=17.0302 ms
+  convex_hull       | OK      | exp=670      | pod=13555    | t_bnb=268.5329 ms
+  twice_around      | OK      | exp=30       | pod=465      | t_bnb=19.5968 ms
+  christofides      | OK      | exp=30       | pod=465      | t_bnb=17.7204 ms
+
+=== Executando B&B + Warm-Starts: berlin52_k38 (n=38) ===
+  cold_start        | OK      | exp=36       | pod=665      | t_bnb=18.4243 ms
+  nearest_neighbor  | OK      | exp=36       | pod=665      | t_bnb=21.4526 ms
+  convex_hull       | OK      | exp=36       | pod=665      | t_bnb=18.2902 ms
+  twice_around      | OK      | exp=36       | pod=665      | t_bnb=17.3524 ms
+  christofides      | OK      | exp=36       | pod=665      | t_bnb=17.2693 ms
+
+=== Executando B&B + Warm-Starts: att48 (n=48) ===
+  cold_start        | OK      | exp=1993     | pod=34358    | t_bnb=611.9031 ms
+  nearest_neighbor  | OK      | exp=1993     | pod=34358    | t_bnb=574.1631 ms
+  convex_hull       | OK      | exp=11353    | pod=274927   | t_bnb=4083.0892 ms
+  twice_around      | OK      | exp=1993     | pod=34358    | t_bnb=572.8414 ms
+  christofides      | OK      | exp=1993     | pod=34358    | t_bnb=577.3299 ms
+
+=== Executando B&B + Warm-Starts: berlin52 (n=52) ===
+  cold_start        | OK      | exp=50       | pod=1274     | t_bnb=47.7313 ms
+  nearest_neighbor  | OK      | exp=50       | pod=1274     | t_bnb=48.1567 ms
+  convex_hull       | OK      | exp=50       | pod=1274     | t_bnb=54.7627 ms
+  twice_around      | OK      | exp=50       | pod=1274     | t_bnb=58.417 ms
+  christofides      | OK      | exp=50       | pod=1274     | t_bnb=48.7222 ms
+
+=== Executando B&B + Warm-Starts: st70 (n=70) ===

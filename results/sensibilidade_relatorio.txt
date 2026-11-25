@@ -1,0 +1,161 @@
+=== Top Correlações (|Spearman| >= 0.40) ===
+  [GEO_E_MST] gap_christofides_pct  ~ razao_aspecto      rho=-0.921 (p=0.000) | r=-0.901 (n=10)
+  [MST      ] gap_christofides_pct  ~ grau_max_mst       rho=+0.859 (p=0.000) | r=+0.868 (n=14)
+  [GEO_E_MST] gap_christofides_pct  ~ grau_max_mst       rho=+0.798 (p=0.006) | r=+0.804 (n=10)
+  [GEO_E_MST] gap_christofides_pct  ~ cv_nn              rho=-0.758 (p=0.011) | r=-0.825 (n=10)
+  [MST      ] gap_hull_pct          ~ n                  rho=+0.736 (p=0.015) | r=+0.518 (n=10)
+  [GEO_E_MST] gap_hull_pct          ~ n                  rho=+0.736 (p=0.015) | r=+0.518 (n=10)
+  [GEO_E_MST] gap_christofides_pct  ~ cv_arestas_mst     rho=-0.721 (p=0.019) | r=-0.813 (n=10)
+  [GEO_E_MST] gap_christofides_pct  ~ entropia_espacial  rho=+0.705 (p=0.023) | r=+0.678 (n=10)
+  [GEO_E_MST] gap_twice_pct         ~ razao_aspecto      rho=-0.701 (p=0.024) | r=-0.821 (n=10)
+  [GEO_E_MST] gap_hull_pct          ~ frac_hull          rho=-0.699 (p=0.025) | r=-0.558 (n=10)
+  [GEO_E_MST] gap_christofides_pct  ~ razao_mst_max      rho=-0.685 (p=0.029) | r=-0.716 (n=10)
+  [GEO_E_MST] gap_twice_pct         ~ cv_nn              rho=-0.661 (p=0.038) | r=-0.716 (n=10)
+  [GEO_E_MST] gap_christofides_pct  ~ frac_impares_mst   rho=+0.661 (p=0.038) | r=+0.616 (n=10)
+  [GEO_E_MST] gap_twice_pct         ~ cv_arestas_mst     rho=-0.648 (p=0.043) | r=-0.682 (n=10)
+  [MST      ] gap_christofides_pct  ~ razao_mst_max      rho=-0.631 (p=0.016) | r=-0.531 (n=14)
+  [MST      ] gap_christofides_pct  ~ cv_nn              rho=-0.626 (p=0.017) | r=-0.637 (n=14)
+  [GEO_E_MST] gap_twice_pct         ~ razao_mst_max      rho=-0.624 (p=0.054) | r=-0.615 (n=10)
+  [GEO_E_MST] gap_christofides_pct  ~ frac_folhas_mst    rho=+0.612 (p=0.060) | r=+0.605 (n=10)
+  [GEO_E_MST] gap_twice_pct         ~ n                  rho=+0.608 (p=0.062) | r=+0.601 (n=10)
+  [MST      ] gap_twice_pct         ~ n                  rho=+0.572 (p=0.033) | r=+0.495 (n=14)
+  [GEO_E_MST] gap_twice_pct         ~ frac_hull          rho=-0.571 (p=0.084) | r=-0.748 (n=10)
+  [MST      ] gap_christofides_pct  ~ cv_arestas_mst     rho=-0.560 (p=0.037) | r=-0.638 (n=14)
+  [MST      ] gap_twice_pct         ~ cv_arestas_mst     rho=-0.543 (p=0.045) | r=-0.565 (n=14)
+  [GEO_E_MST] gap_nn_pct            ~ frac_hull          rho=+0.535 (p=0.111) | r=+0.682 (n=10)
+  [MST      ] gap_christofides_pct  ~ n                  rho=+0.515 (p=0.060) | r=+0.399 (n=14)
+  [MST      ] gap_twice_pct         ~ cv_nn              rho=-0.512 (p=0.061) | r=-0.576 (n=14)
+  [GEO_E_MST] gap_nn_pct            ~ grau_max_mst       rho=-0.494 (p=0.147) | r=-0.719 (n=10)
+  [GEO_E_MST] gap_nn_pct            ~ clark_evans        rho=+0.438 (p=0.206) | r=+0.093 (n=10)
+  [GEO_E_MST] gap_nn_pct            ~ razao_aspecto      rho=+0.433 (p=0.211) | r=+0.841 (n=10)
+  [GEO_E_MST] gap_hull_pct          ~ razao_aspecto      rho=-0.433 (p=0.211) | r=-0.386 (n=10)
+  [MST      ] gap_christofides_pct  ~ frac_folhas_mst    rho=+0.429 (p=0.126) | r=+0.482 (n=14)
+  [GEO_E_MST] gap_twice_pct         ~ entropia_espacial  rho=+0.413 (p=0.235) | r=+0.399 (n=10)
+  [GEO_E_MST] gap_nn_pct            ~ n                  rho=-0.413 (p=0.235) | r=-0.354 (n=10)
+
+[MST] Alvo: Twice-around-the-tree (gap_twice_pct) | n_inst=14
+  Ridge (alpha=21.5): R2_treino=0.360 | R2_LOOCV=-0.372 | RMSE_LOOCV=9.64 pp
+  Árvore (max_depth=2): R2_treino=0.624
+|--- n <= 19.00
+|   |--- value: [15.60]
+|--- n >  19.00
+|   |--- cv_arestas_mst <= 0.57
+|   |   |--- value: [32.72]
+|   |--- cv_arestas_mst >  0.57
+|   |   |--- value: [25.74]
+
+
+[MST] Alvo: Christofides (gap_christofides_pct) | n_inst=14
+  Ridge (alpha=6.81): R2_treino=0.734 | R2_LOOCV=0.198 | RMSE_LOOCV=2.93 pp
+  Árvore (max_depth=2): R2_treino=0.873
+|--- grau_max_mst <= 3.50
+|   |--- n <= 21.50
+|   |   |--- value: [3.43]
+|   |--- n >  21.50
+|   |   |--- value: [5.22]
+|--- grau_max_mst >  3.50
+|   |--- cv_arestas_mst <= 0.33
+|   |   |--- value: [12.29]
+|   |--- cv_arestas_mst >  0.33
+|   |   |--- value: [9.34]
+
+
+[MST] Alvo: Nearest Neighbor (gap_nn_pct) | n_inst=14
+  Ridge (alpha=31.6): R2_treino=0.360 | R2_LOOCV=-0.650 | RMSE_LOOCV=16.32 pp
+  Árvore (max_depth=2): R2_treino=0.885
+|--- razao_mst_max <= 4.09
+|   |--- cv_arestas_mst <= 0.58
+|   |   |--- value: [20.75]
+|   |--- cv_arestas_mst >  0.58
+|   |   |--- value: [9.67]
+|--- razao_mst_max >  4.09
+|   |--- value: [48.28]
+
+
+[MST] Alvo: Convex Hull Insertion (gap_hull_pct) | n_inst=10
+  Ridge (alpha=100): R2_treino=0.062 | R2_LOOCV=-0.814 | RMSE_LOOCV=3.97 pp
+  Árvore (max_depth=2): R2_treino=0.946
+|--- n <= 35.00
+|   |--- cv_arestas_mst <= 0.42
+|   |   |--- value: [2.31]
+|   |--- cv_arestas_mst >  0.42
+|   |   |--- value: [0.57]
+|--- n >  35.00
+|   |--- cv_arestas_mst <= 0.59
+|   |   |--- value: [3.03]
+|   |--- cv_arestas_mst >  0.59
+|   |   |--- value: [8.37]
+
+
+[GEO_E_MST] Alvo: Twice-around-the-tree (gap_twice_pct) | n_inst=10
+  Ridge (alpha=10): R2_treino=0.728 | R2_LOOCV=-0.271 | RMSE_LOOCV=8.65 pp
+  Árvore (max_depth=2): R2_treino=0.820
+|--- frac_hull <= 0.28
+|   |--- clark_evans <= 1.04
+|   |   |--- value: [25.53]
+|   |--- clark_evans >  1.04
+|   |   |--- value: [33.43]
+|--- frac_hull >  0.28
+|   |--- value: [17.49]
+
+
+[GEO_E_MST] Alvo: Christofides (gap_christofides_pct) | n_inst=10
+  Ridge (alpha=0.316): R2_treino=0.983 | R2_LOOCV=0.152 | RMSE_LOOCV=2.84 pp
+  Árvore (max_depth=2): R2_treino=0.923
+|--- razao_aspecto <= 1.41
+|   |--- razao_mst_max <= 2.08
+|   |   |--- value: [12.29]
+|   |--- razao_mst_max >  2.08
+|   |   |--- value: [10.18]
+|--- razao_aspecto >  1.41
+|   |--- razao_mst_max <= 3.82
+|   |   |--- value: [7.37]
+|   |--- razao_mst_max >  3.82
+|   |   |--- value: [3.66]
+
+
+[GEO_E_MST] Alvo: Nearest Neighbor (gap_nn_pct) | n_inst=10
+  Ridge (alpha=3.16): R2_treino=0.855 | R2_LOOCV=-1.336 | RMSE_LOOCV=21.29 pp
+  Árvore (max_depth=2): R2_treino=0.935
+|--- razao_mst_max <= 4.09
+|   |--- clark_evans <= 1.04
+|   |   |--- value: [7.36]
+|   |--- clark_evans >  1.04
+|   |   |--- value: [20.20]
+|--- razao_mst_max >  4.09
+|   |--- value: [48.28]
+
+
+[GEO_E_MST] Alvo: Convex Hull Insertion (gap_hull_pct) | n_inst=10
+  Ridge (alpha=31.6): R2_treino=0.299 | R2_LOOCV=-0.843 | RMSE_LOOCV=4.01 pp
+  Árvore (max_depth=2): R2_treino=0.805
+|--- frac_hull <= 0.19
+|   |--- value: [6.87]
+|--- frac_hull >  0.19
+|   |--- frac_impares_mst <= 0.47
+|   |   |--- value: [0.57]
+|   |--- frac_impares_mst >  0.47
+|   |   |--- value: [2.27]
+
+
+=== Instâncias Adversariais (Top-3 maiores gaps e features extremas) ===
+
+Twice-around-the-tree (gap_twice_pct):
+  - gr21          n=21 gap= 38.09% | grau_max_mst=3 (z=-1.15)
+  - berlin52      n=52 gap= 37.92% | frac_folhas_mst=0.231 (z=-1.78), n=52 (z=+1.35), grau_max_mst=3 (z=-1.15), entropia_espacial=0.744 (z=-1.06)
+  - bayg29        n=29 gap= 36.21% | clark_evans=1.44 (z=+1.64), cv_arestas_mst=0.239 (z=-1.38), entropia_espacial=0.855 (z=+1.22), cv_nn=0.279 (z=-1.20)
+
+Christofides (gap_christofides_pct):
+  - bays29        n=29 gap= 13.02% | clark_evans=1.44 (z=+1.64), frac_folhas_mst=0.379 (z=+1.63), cv_arestas_mst=0.276 (z=-1.24), entropia_espacial=0.855 (z=+1.22)
+  - bayg29        n=29 gap= 11.55% | clark_evans=1.44 (z=+1.64), cv_arestas_mst=0.239 (z=-1.38), entropia_espacial=0.855 (z=+1.22), cv_nn=0.279 (z=-1.20)
+  - berlin52_k38  n=38 gap= 10.71% | entropia_espacial=0.751 (z=-0.91), grau_max_mst=4 (z=+0.87), clark_evans=1.03 (z=-0.82)
+
+Nearest Neighbor (gap_nn_pct):
+  - ulysses22     n=22 gap= 50.95% | razao_mst_max=6.25 (z=+2.83), cv_nn=1.63 (z=+2.54), cv_arestas_mst=1.27 (z=+2.46), razao_aspecto=3.26 (z=+1.82)
+  - ulysses16     n=16 gap= 45.62% | frac_hull=0.438 (z=+2.09), razao_aspecto=3.27 (z=+1.83), entropia_espacial=0.713 (z=-1.70), frac_impares_mst=0.375 (z=-1.68)
+  - bayg29        n=29 gap= 24.53% | clark_evans=1.44 (z=+1.64), cv_arestas_mst=0.239 (z=-1.38), entropia_espacial=0.855 (z=+1.22), cv_nn=0.279 (z=-1.20)
+
+Convex Hull Insertion (gap_hull_pct):
+  - berlin52_k38  n=38 gap=  9.28% | entropia_espacial=0.751 (z=-0.91), grau_max_mst=4 (z=+0.87), clark_evans=1.03 (z=-0.82)
+  - berlin52      n=52 gap=  7.46% | frac_folhas_mst=0.231 (z=-1.78), n=52 (z=+1.35), grau_max_mst=3 (z=-1.15), entropia_espacial=0.744 (z=-1.06)
+  - st70          n=70 gap=  3.85% | n=70 (z=+2.53), frac_hull=0.143 (z=-1.18), entropia_espacial=0.851 (z=+1.14), grau_max_mst=4 (z=+0.87)
