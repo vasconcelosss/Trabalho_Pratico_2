@@ -1,31 +1,22 @@
-import time
-import tracemalloc
 import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 
+from medicao import medir as _medir
 from mst import prim, peso_total_mst
 from matching import emparelhamento_perfeito_minimo
 from twice_around import twice_around_the_tree
 from christofides import christofides
 
 
-def medir(funcao, *args):
+def medir(funcao, *args, repeticoes=5):
     """
-    Executa uma função e retorna o resultado junto com o tempo (segundos)
-    e pico de memória usada (bytes).
+    Executa uma função e retorna (resultado, tempo em segundos, pico de memória em bytes).
+    Tempo = mediana de `repeticoes` execuções SEM tracemalloc; memória = passada
+    separada com tracemalloc (ver medicao.py).
     """
-    tracemalloc.start()
-
-    inicio = time.perf_counter()
-    resultado = funcao(*args)
-    fim = time.perf_counter()
-
-    _, pico_bytes = tracemalloc.get_traced_memory()
-    tracemalloc.stop()
-
-    tempo_seg = fim - inicio
-    return resultado, tempo_seg, pico_bytes
+    resultado, tempo_seg, pico_kb = _medir(funcao, *args, repeticoes=repeticoes)
+    return resultado, tempo_seg, pico_kb * 1024
 
 
 def rodar_profiling(distancias, n, nome_instancia="?"):

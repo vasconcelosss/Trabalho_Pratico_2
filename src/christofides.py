@@ -1,5 +1,6 @@
 import sys
 import os
+import time
 sys.path.insert(0, os.path.dirname(__file__))
 
 from mst import prim, adjacencia_mst, vertices_grau_impar
@@ -47,7 +48,7 @@ def _circuito_euleriano(adj_multi, n):
     return circuito
 
 
-def christofides(distancias, n):
+def christofides(distancias, n, perfil=None):
     """
     Algoritmo de Christofides: aproximação 3/2 para o TSP métrico.
 
@@ -60,17 +61,34 @@ def christofides(distancias, n):
         custo      : custo total da rota
         arestas_mst: arestas da MST usada
         peso_match : peso do emparelhamento usado
+
+    Se `perfil` for um dict, ele é preenchido com o tempo (s) de cada etapa:
+    mst, impares, matching, multigrafo, euler, shortcut (e total).
+    Sem `perfil` a função se comporta como antes.
     """
+    _agora = time.perf_counter
+    _t_ini = _t = _agora()
+
+    def _marca(nome):
+        nonlocal _t
+        agora = _agora()
+        if perfil is not None:
+            perfil[nome] = agora - _t
+        _t = agora
+
     # Passo 1: Construir a MST
     arestas_mst = prim(distancias, n)
+    _marca('mst')
 
     # Passo 2: Identificar vértices de grau ímpar na MST
     impares = vertices_grau_impar(arestas_mst, n)
+    _marca('impares')
 
     # Passo 3: Emparelhamento perfeito de peso mínimo nos vértices ímpares
     arestas_match, peso_match = emparelhamento_perfeito_minimo(
         distancias, n, arestas_mst
     )
+    _marca('matching')
 
     # Passo 4: Combinar MST + emparelhamento → multigrafo H
     # Usamos listas (não conjuntos) para permitir arestas paralelas (multigrafo)
@@ -87,7 +105,9 @@ def christofides(distancias, n):
     # Passo 5: Circuito euleriano em H (todo vértice tem grau par agora)
     # Fazemos uma cópia porque _circuito_euleriano modifica o dicionário
     adj_copia = {v: list(vizinhos) for v, vizinhos in adj_multi.items()}
+    _marca('multigrafo')
     circuito = _circuito_euleriano(adj_copia, n)
+    _marca('euler')
 
     # Passo 6: Converter circuito euleriano em rota hamiltoniana (shortcut)
     # Percorre o circuito e mantém apenas a primeira ocorrência de cada vértice
@@ -100,5 +120,8 @@ def christofides(distancias, n):
 
     # Passo 7: Calcular custo (inclui retorno ao vértice inicial)
     custo = calcular_custo_rota(rota, distancias)
+    _marca('shortcut')
+    if perfil is not None:
+        perfil['total'] = _agora() - _t_ini
 
     return rota, custo, arestas_mst, peso_match
